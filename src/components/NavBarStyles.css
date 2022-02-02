@@ -1,0 +1,33 @@
+.navbar-container {
+    height: 6em;
+    background-color: black;
+    overflow: hidden;
+}
+
+.navbar-button-container {
+    overflow: hidden;
+    display: flex;
+    height: 6em;
+} 
+
+.navbar-logo {
+    font-size: 24px;
+    color: white;
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.navbar-button {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    align-self: flex-end;
+
+}
