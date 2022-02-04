@@ -9,8 +9,8 @@ function NavBar(){
     return(
         <div className='navbar-container'>
             <nav>
-                <p className='navbar-logo'>Mercante.</p>
                     <div className='navbar-button-container'>
+                        <p className='navbar-logo'>Mercante.</p>
                         <p className='navbar-button'>Inicio</p>
                         <p className='navbar-button'>Productos<FontAwesomeIcon icon={faAngleDown} size='xs'/></p>
                         <p className='navbar-button'>FAQ</p>

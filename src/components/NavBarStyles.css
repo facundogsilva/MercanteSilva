@@ -1,7 +1,9 @@
+
 .navbar-container {
     height: 6em;
     background-color: black;
     overflow: hidden;
+    display: flex;
 }
 
 .navbar-button-container {
@@ -11,13 +13,15 @@
 } 
 
 .navbar-logo {
-    font-size: 24px;
+    font-size: 30px;
     color: white;
     float: left;
     text-align: center;
+    align-self: center;
     padding: 14px 16px;
     text-decoration: none;
     font-weight: bold;
+    font-family: 'Kanit', sans-serif;
 
 }
 
@@ -29,5 +33,5 @@
     text-decoration: none;
     font-size: 17px;
     align-self: flex-end;
-
+    font-family: 'Kanit', sans-serif;
 }
