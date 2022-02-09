@@ -1,7 +1,9 @@
 import React from 'react';
 import './NavBarStyles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faCoffee, faCog } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import CartWidget from './CartWidget';
+
 
 const element = <FontAwesomeIcon icon={faAngleDown} />
 
@@ -15,6 +17,9 @@ function NavBar(){
                         <p className='navbar-button'>Productos<FontAwesomeIcon icon={faAngleDown} size='xs'/></p>
                         <p className='navbar-button'>FAQ</p>
                         <p className='navbar-button'>Contacto</p>
+                        <div className='cartwidgetbutton'>
+                            <CartWidget/>
+                        </div>
                     </div>
             </nav>
         </div>

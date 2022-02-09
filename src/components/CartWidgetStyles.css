@@ -1,0 +1,14 @@
+.cart-button {
+    font-size: 17px;
+    align-self: center;
+    color: black;
+
+}
+button {
+    height: 40px;
+    width: 80px;
+    border-radius: 20px;
+    float: right;
+
+}
+
