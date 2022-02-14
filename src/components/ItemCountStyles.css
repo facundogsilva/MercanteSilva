@@ -1,0 +1,27 @@
+.card {
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    padding: 50px;
+    margin: 10px;
+    font-family: 'Kanit', sans-serif;
+    background-color: grey;
+    width: 30%;
+    border-radius: 10px;
+
+
+}
+.item-title {
+    font-size: 22px;
+    color: lightgray;
+
+}
+
+.item-count-number {
+    font-size:  18px;
+}
+
+.cart-add-button {
+
+    width: 30%;
+}

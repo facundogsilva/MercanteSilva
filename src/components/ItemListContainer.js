@@ -1,10 +1,14 @@
 import React from 'react'; 
-import './ItemListContainerStyles.css'; 
+import './ItemListContainerStyles.css';
 
-function ItemListContainer() {
+
+function ItemListContainer({greeting}) {
     return (
-        <div className='itemlistcontainer-text'>Bienvenidos a Mercante!</div>
-    )
-}
-
+        <div>
+        <div className='itemlistcontainer-text'>Hola,{greeting}</div>
+        </div>
+        
+        
+    ) }
+    
 export default ItemListContainer;
