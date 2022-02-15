@@ -1,7 +1,8 @@
 .card {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-content: space-between;
+    align-items: center;
     padding: 50px;
     margin: 10px;
     font-family: 'Kanit', sans-serif;
@@ -12,16 +13,29 @@
 
 }
 .item-title {
-    font-size: 22px;
+    font-size: 20px;
     color: lightgray;
+    order: 1;
+    align-content: center;
 
+}
+.counter-numbers {
+    order: 3;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.counter-numbers button {
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .item-count-number {
     font-size:  18px;
+    order: 2;
 }
 
 .cart-add-button {
-
-    width: 30%;
+    order: 1;
 }
