@@ -1,14 +1,15 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import React from 'react'; 
 import Item from './Item';
+import './ItemListStyles.css';
 
 
 function ItemList ({products}) {
 
     return (
-        <div>
+        <div className='item-list'>
         {products.map((product) => (
-            <Item {...product} id={product.id} price={product.price} pictureUrl={product.pictureUrl} title={product.title} />
+            <Item key={product.id} id={product.id} price={product.price} pictureUrl={product.pictureUrl} title={product.title} />
         ))}
         </div>
     )  

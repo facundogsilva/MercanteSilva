@@ -12,7 +12,7 @@ function NavBar(){
         <div className='navbar-container'>
             <nav>
                     <div className='navbar-button-container'>
-                        <p className='navbar-logo'>Mercante.</p>
+                        <p className='navbar-logo'>Mercante.</p> 
                         <p className='navbar-button'>Inicio</p>
                         <p className='navbar-button'>Productos<FontAwesomeIcon icon={faAngleDown} size='xs'/></p>
                         <p className='navbar-button'>FAQ</p>
