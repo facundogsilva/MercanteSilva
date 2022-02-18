@@ -1,57 +1,57 @@
 const productos = [
   {
     id: 1,
-    title: "Apple Watch Series 5",
-    price: 47999,
-    pictureUrl: "https://m.media-amazon.com/images/I/71luYyAPVTL._AC_SL1500_.jpg"
+    title: "Remera con tu logo",
+    price: 2500,
+    pictureUrl: "https://dehoynopasa.com.ar/wp-content/uploads/blacna.jpg"
   },
   {
     id: 2,
-    title: "Samsung Galaxy Watch 3",
-    price: 1250,
-    pictureUrl: "https://images.samsung.com/is/image/samsung/ar/galaxy-note20/gallery/ar-galaxy-watch3-r840-sm-r840nzkaaro-frontmysticblack-275071750?$720_576_PNG$"
+    title: "Taza termica blanca con tu logo",
+    price: 750,
+    pictureUrl: "https://www.brildor.com/media/catalog/product/cache/21d516047c3b0f7c4a4c397e20cf92ab/t/a/taza-termo-inoxidable-blanca-d1.jpg"
   },
   {
     id: 3,
-    title: " Amazfit Bip Xiaomi",
-    price: 1250,
-    pictureUrl: "https://nissei.com/media/catalog/product/cache/16a9529cefd63504739dab4fc3414065/s/m/smartwatch-amazifit-bip-a1608-xiaomi_1.jpg"
+    title: "Mochila negra con tu logo",
+    price: 3000,
+    pictureUrl: "https://static.dafiti.com.ar/p/topper-3725-049215-1-product.jpg"
   },
   {
     id: 4,
-    title: "Huawei Watch GT 2e",
-    price: 1250,
-    pictureUrl: "https://www.powerplanetonline.com/cdnassets/huawei_watch_gt_2e_mint_green_01_l.jpg"
+    title: "Cuaderno anotador con tu logo",
+    price: 250,
+    pictureUrl: "https://pbs.twimg.com/profile_images/746461983222837248/MiRZmIf__400x400.jpg"
   },
   {
     id: 5,
-    title: "Xiaomi Mi Watch",
+    title: "Birome",
     price: 1250,
-    pictureUrl: "https://tiendashopealo.com.ar/wp-content/uploads/2021/07/xiaomi-mi-watchcolor-sports-edition-4-1-e37dc6b6-7a23-428c-a3a3-22ff4abbbbb2.jpg"
+    pictureUrl: "http://d2r9epyceweg5n.cloudfront.net/stores/001/172/458/products/boligrafo-micro-city-retractil1-47300eaa6dcd82b60d15512784228380-640-01-dfa7d08faea40fdd7915883493121133-640-0.jpg"
   },
   {
     id: 6,
-    title: "Garmin Vivomove 3",
-    price: 1250,
-    pictureUrl: "https://www.garmin.com.ar/Image/0/750_750-010-02239-01_1.jpg"
+    title: "Gorra con tu logo",
+    price: 700,
+    pictureUrl: "https://rosario.digital/wp-content/uploads/2020/02/Gorra-Trucker-Infantil-Negra-Negra-Negra.jpg"
   },
   {
     id: 7,
-    title: "TicWatch Pro 3",
+    title: "Lampara focus",
     price: 1250,
-    pictureUrl: "https://www.tecnocity.com.ar/wp-content/uploads/2021/07/ccc848ae41f1db93ac6ce1c4720251d1.jpg"
+    pictureUrl: "https://www.lo-mejor.com/wp-content/uploads/2019/08/las-mejores-lamparas-de-oficina.jpg"
   },
   {
     id: 8,
-    title: " Honor Band 6",
-    price: 1250,
-    pictureUrl: "https://dxelectronica.com.ar/wp-content/uploads/2021/06/HONORBAND6-1.jpg"
+    title: "Paraguas",
+    price: 500,
+    pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_658871-MLA32707603554_102019-W.jpg"
   },
   {
     id: 9,
-    title: " Casio G Shock",
-    price: 1250,
-    pictureUrl: "https://www.cellshop.com/2779897-thickbox_default/relogio-masculino-casio-g-shock-gmw-85000-1dr-digital.jpg"
+    title: "Rompevientos",
+    price: 4000,
+    pictureUrl: "https://www.nakaoutdoors.com.ar/img/articulos/rompevientos_marmot_ion_windshirt_1.jpg"
   }
 ]
 

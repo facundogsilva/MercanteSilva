@@ -4,6 +4,7 @@ import Item from './Item';
 import './ItemListStyles.css';
 
 
+
 function ItemList ({products}) {
 
     return (
@@ -11,6 +12,7 @@ function ItemList ({products}) {
         {products.map((product) => (
             <Item key={product.id} id={product.id} price={product.price} pictureUrl={product.pictureUrl} title={product.title} />
         ))}
+            
         </div>
     )  
 }

@@ -1,3 +1,11 @@
 .item-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
     background-color: lightgray;
+    padding-top: 50px;
+    padding-left: 25px;
+    padding-right: 20px;
+
 }
