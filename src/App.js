@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer';
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
    <NavBar/>
    <ItemListContainer greeting= ' bienvendos a Mercante!'/>
    <ItemDetailContainer />
-   <ItemCount stock={5} initial={1} />
+   <Footer />
    </div>
   );
 }

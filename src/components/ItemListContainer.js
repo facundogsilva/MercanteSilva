@@ -7,7 +7,7 @@ import './ItemListContainerStyles.css';
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    let promesa = new Promise((resolve, reject) => {
+     let promesa = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(productos)
         }, 5000)

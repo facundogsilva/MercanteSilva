@@ -1,33 +1,53 @@
 import React, { useState, useEffect } from 'react';
-import productos2 from './items'
 import ItemDetail from './ItemDetail';
-import items from './items';
+import productos from './productos';
 
-const getItems = () => {
-    const [items, getItems] = useState([]);
+const ItemDetailContainer = () => {
+    const [productos, getItems] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    let promesa = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(items)
-        }, 2000)
-    })
+    const ItemGetter = async () => {
+        try {
+            setTimeout(() => {
+                productos.get()
+                .then((doc) => {
+
+                    if(!doc.exists){
+                        console.log('No producto con ese id');
+                        return
+                    }
+
+                    getItems({ id: productos.id, ...productos.data() });
+
+                })
+                .catch((error) => {
+                    console.log('Error:', error);
+
+                })
+                .finally(() => {
+                    setLoading(false);
+                })
+
+            }, 2000);
+
+        } catch (error) {
+            console.log('Error en la funcion:', error);
+        }
+    };
     useEffect(() => {
-        promesa
-            .then((res) => {
-                getItems(res);
-            })
-            .catch((error) => {
-                console.log(error);
-            })  
-            .finally(() => {
-                setLoading(false);
-            });
-    }, []);
+       ItemGetter();
+    },[]);
 
-function ItemDetailContainer () {
     return (
-        <ItemDetail id={items.descripcion} price={items.price} pictureUrl={items.pictureUrl} title={items.title}/>
-    );
+        <>
+            {loading ? (
+                <h1 className='itemlistcontainer-text'>Cargando...</h1>
+            ) : (
+
+            <ItemDetail id={productos}/>
+            )}
+        </>
+    )
 }
-}
-export default ItemDetailContainer;
+
+export default ItemDetailContainer

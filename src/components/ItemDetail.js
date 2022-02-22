@@ -5,8 +5,8 @@ function ItemDetail ({descripcion, title, price, pictureUrl}) {
         <>
             <h1>{title}</h1>
             <p>{descripcion}</p>
-            <p>$ {price}</p>
-            <img src={pictureUrl}></img>
+            <p>{price}</p>
+            <img src={pictureUrl} alt="foto del producto"></img>
         </>
     )
 }

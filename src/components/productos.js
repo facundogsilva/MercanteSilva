@@ -52,6 +52,24 @@ const productos = [
     title: "Rompevientos",
     price: 4000,
     pictureUrl: "https://www.nakaoutdoors.com.ar/img/articulos/rompevientos_marmot_ion_windshirt_1.jpg"
+  },
+  {
+    id: 10,
+    title: "Reloj",
+    price: 1500,
+    pictureUrl: "https://ddz5v9n0a16cg.cloudfront.net/web/images/productos/b/0000009000/9654.jpg"
+  },
+  {
+    id: 11,
+    title: "Botella termica",
+    price: 1000,
+    pictureUrl: "https://www.conasi.eu/5831-large_default/botella-termica-acero-inoxidable-750ml.jpg"
+  },
+  {
+    id: 12,
+    title: "Cooler",
+    price: 750,
+    pictureUrl: "https://asialink.cl/wp-content/uploads/2021/02/MO8949_03A-2.jpg"
   }
 ]
 
