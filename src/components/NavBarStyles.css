@@ -13,6 +13,11 @@
     width: 98vw;
 } 
 
+.link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .navbar-logo {
     font-size: 30px;
     color: white;
