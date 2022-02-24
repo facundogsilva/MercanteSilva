@@ -10,12 +10,12 @@ import Footer from './components/Footer'
 function App() {
   return (
     <BrowserRouter>
+    <NavBar />
       <Routes>
-        <Route path='/category/:id' element={<ItemListContainer/>}></Route>
-        <Route path='/item/:id' element={<ItemDetailContainer/>}></Route>
+        <Route path='/' element={<ItemListContainer greeting= ' bienvendos a Mercante!'/>}></Route>
+        <Route path='/product/:id' element={<ItemDetailContainer/>}></Route>
+        <Route path='/item/category/:id' element={<ItemListContainer/>}></Route>
       </Routes>
-      <NavBar/>
-   <ItemListContainer greeting= ' bienvendos a Mercante!'/>
    <ItemDetailContainer />
    <Footer />
    </BrowserRouter>
