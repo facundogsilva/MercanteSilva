@@ -11,8 +11,8 @@ function ItemDetail ({descripcion, title, price, pictureUrl}) {
             </div>
             <div className='column-2'>
             <h1 className='title'>Titulo{title}</h1>
-            <p className='description'>Descripcion del producto{descripcion}</p>
-            <p className='price'>$ PRECIO ARS{price}</p>
+            <p className='description'>Descripcion del producto</p>
+            <p className='price'>$ PRECIO ARS</p>
             <div className='item-count-container'><ItemCount /></div>
             </div>
             </div>

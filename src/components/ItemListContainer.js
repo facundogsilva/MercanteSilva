@@ -36,7 +36,7 @@ import './ItemListContainerStyles.css';
                 </>
             )}
         </>
-    );
+    )
     }
 
 export default ItemListContainer;

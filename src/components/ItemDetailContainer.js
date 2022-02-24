@@ -7,10 +7,10 @@ const getItem = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(productos);
     }, 2000);
-})
+});
 
-const ItemDetailContainer = () => {
-    const [productos, setProductos] = useState([]);
+function ItemDetailContainer () {
+    const [producto, setProductos] = useState();
     const [loading, setLoading] = useState(true); 
     const { id } = useParams();
     useEffect (() => {
@@ -20,12 +20,13 @@ const ItemDetailContainer = () => {
             if (id) {
                 getItem.then((res) => {
                     let resultado = res.filter((elemento) => {
-                        let mostrarProducto = '';
-                        if (elemento.id == id) {
+                        let mostrarProducto;
+                        if (id == elemento.id) {
                             mostrarProducto = elemento;
                         }
                         return mostrarProducto;
                     });
+                    console.log(resultado);
                     setProductos(resultado);
                     setLoading(true);
                 });
@@ -35,14 +36,15 @@ const ItemDetailContainer = () => {
                 setLoading(false);
             });
         } catch (error) {
-            console.log('error: ', error)
+            console.log('error: ', error);
         }
-    }, []);
+    }, [id]);
+    
     return (
         <>
-            {loading ? ( <h1 className='itemlistcontainer-text'>Cargando...</h1> ) : ( <ItemDetail item={productos}/> )}
+            {loading ? ( <h1 className='itemlistcontainer-text'>Cargando...</h1> ) : ( <ItemDetail item={producto}/> )}
         </>
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
