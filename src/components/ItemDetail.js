@@ -14,5 +14,4 @@ function ItemDetail ({descripcion, title, price, pictureUrl}) {
     )
 }
 
-
 export default ItemDetail;
