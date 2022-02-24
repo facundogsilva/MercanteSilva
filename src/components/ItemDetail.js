@@ -10,9 +10,9 @@ function ItemDetail ({descripcion, title, price, pictureUrl}) {
             <img src='https://www.brildor.com/media/catalog/product/cache/21d516047c3b0f7c4a4c397e20cf92ab/t/a/taza-termo-inoxidable-blanca-d1.jpg' alt="foto del producto"></img>
             </div>
             <div className='column-2'>
-            <h1 className='title'>Titulo</h1>
-            <p className='description'>Descripcion del producto</p>
-            <p className='price'>$ PRECIO ARS</p>
+            <h1 className='title'>Titulo{title}</h1>
+            <p className='description'>Descripcion del producto{descripcion}</p>
+            <p className='price'>$ PRECIO ARS{price}</p>
             <div className='item-count-container'><ItemCount /></div>
             </div>
             </div>

@@ -1,10 +1,7 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import React from 'react'; 
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Item from './Item';
 import './ItemListStyles.css';
-
-
 
 function ItemList ({products}) {
 
