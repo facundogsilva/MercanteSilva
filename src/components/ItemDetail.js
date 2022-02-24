@@ -13,7 +13,7 @@ function ItemDetail ({descripcion, title, price, pictureUrl}) {
             <h1 className='title'>Titulo{title}</h1>
             <p className='description'>Descripcion del producto</p>
             <p className='price'>$ PRECIO ARS</p>
-            <div className='item-count-container'><ItemCount /></div>
+            <div className='item-count-container'><ItemCount initial={0}/></div>
             </div>
             </div>
             </div>
