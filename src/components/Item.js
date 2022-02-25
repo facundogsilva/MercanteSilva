@@ -6,15 +6,14 @@ import ItemCount from './ItemCount';
 
 function Item ({id, title, price, pictureUrl}) {
     return (
-<Link to='/item/${id}' key={id} className='link'>
         <div className='item-card'>
             <h1 className='item-id'>{id}</h1>
-            <p className='item-title'>{id} - {title}</p>
+            <Link to='/productos/${id}' key={id} className='link'><p className='item-title'>{id} - {title}</p>
             <p className='item-price'>$ {price} ARS</p>
             <img src={pictureUrl} className='item-pic'></img>
             <ItemCount initial={0} stock={5}/>
+            </Link> 
         </div>
-</Link>
     )   
 }
 

@@ -10,24 +10,19 @@ const getItem = new Promise((resolve, reject) => {
 });
 
 function ItemDetailContainer () {
-    const [producto, setProducto] = useState();
+    const [producto, setProducto] = useState([]);
     const [loading, setLoading] = useState(true); 
     const { id } = useParams();
     
     useEffect(() => {
-        try {
-          if (id) {
-            async function fetchData() {
-              const todosLosProductos = await getItem();
-              const [id] = todosLosProductos.filter((elemento) => (id == elemento.id ? elemento : false));
-              setProducto(id);
-              setLoading(true);
-            }
-            fetchData();
-          }
-        } catch (error) {
-          console.log(error);
-        }
+              async function fetchData() {
+                const todosLosProductos = await getItem();
+                const [seleccion] = todosLosProductos.filter((elemento) => (elemento.id ? elemento : false));
+                console.log(id);
+                setProducto(seleccion);
+                setLoading(false);
+              }
+              fetchData(); 
       }, [id]);
     
     return (
