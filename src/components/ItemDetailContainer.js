@@ -13,12 +13,11 @@ function ItemDetailContainer () {
     const [producto, setProducto] = useState([]);
     const [loading, setLoading] = useState(true); 
     const { id } = useParams();
-    
+
     useEffect(() => {
               async function fetchData() {
                 const todosLosProductos = await getItem();
-                const [seleccion] = todosLosProductos.filter((elemento) => (elemento.id ? elemento : false));
-                console.log(id);
+                const [seleccion] = todosLosProductos.filter(id => todosLosProductos.id === id);
                 setProducto(seleccion);
                 setLoading(false);
               }
