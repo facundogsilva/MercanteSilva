@@ -15,13 +15,18 @@ function ItemDetailContainer () {
     const { id } = useParams();
 
     useEffect(() => {
+        try {
               async function fetchData() {
-                const todosLosProductos = await getItem();
+                const todosLosProductos = await getItem;
                 const [seleccion] = todosLosProductos.filter(id => todosLosProductos.id === id);
                 setProducto(seleccion);
                 setLoading(false);
               }
               fetchData(); 
+        }
+        catch (error) {
+            console.log('error: ', error)
+        }
       }, [id]);
     
     return (
