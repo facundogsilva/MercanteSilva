@@ -3,29 +3,31 @@ import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import productos from './productos';
 
-const getItem = new Promise((resolve, reject) => {
+const getItem = () => 
+new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(productos);
     }, 2000);
 });
 
 function ItemDetailContainer () {
-    const [producto, setProducto] = useState([]);
+    const [producto, setProducto] = useState();
     const [loading, setLoading] = useState(true); 
     const { id } = useParams();
 
     useEffect(() => {
         try {
               async function fetchData() {
-                const todosLosProductos = await getItem;
-                const seleccion = todosLosProductos.filter((todosLosProductos) => (id === todosLosProductos.id ));
+                const todosLosProductos = await getItem();
+                console.log(todosLosProductos)
+                const seleccion = todosLosProductos.filter(itemSeleccionado => itemSeleccionado.id === id);
+                console.log(seleccion);
                 setProducto(seleccion);
                 setLoading(false);
               }
               fetchData(); 
-        }
-        catch (error) {
-            console.log('error: ', error)
+        } catch (error) {
+            console.log('error: ', error);
         }
       }, [id]);
     
