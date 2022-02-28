@@ -18,7 +18,7 @@ function ItemDetailContainer () {
         try {
               async function fetchData() {
                 const todosLosProductos = await getItem;
-                const [seleccion] = todosLosProductos.filter(id => todosLosProductos.id === id);
+                const seleccion = todosLosProductos.filter((todosLosProductos) => (id === todosLosProductos.id ));
                 setProducto(seleccion);
                 setLoading(false);
               }
@@ -31,7 +31,7 @@ function ItemDetailContainer () {
     
     return (
         <>
-            {loading ? ( <h1 className='itemlistcontainer-text'>Cargando...</h1> ) : ( <ItemDetail item={producto}/> )}
+            {loading ? ( <h1 className='itemlistcontainer-text'>Cargando...</h1> ) : ( <ItemDetail producto={producto}/> )}
         </>
     )
 }

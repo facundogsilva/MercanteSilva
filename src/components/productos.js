@@ -2,6 +2,7 @@ const productos = [
   {
     id: 1,
     title: "Remera con tu logo",
+    description: "Taza blanca termica con el logo de la empresa",
     price: 2500,
     pictureUrl: "https://dehoynopasa.com.ar/wp-content/uploads/blacna.jpg"
   },
