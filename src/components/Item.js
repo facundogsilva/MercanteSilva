@@ -13,7 +13,6 @@ function Item ({id, title, price, pictureUrl}) {
             <p className='item-price'>$ {price} ARS</p>
             <img src={pictureUrl} className='item-pic'></img>
             </Link>
-            
         </div>
     )   
 }

@@ -23,8 +23,10 @@ function ItemCount ({stock, initial, itemsAdded}) {
     };
 
     const onAdd = () => {
+        if(count > 0) {
         const itemsAdded = count;
         setMostrar(false)
+        } 
 
     }
 
