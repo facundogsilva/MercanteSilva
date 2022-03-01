@@ -10,10 +10,10 @@ function ItemDetail ({ producto }) {
             <img src={producto.pictureUrl} alt="foto del producto" className='detail-img'></img>
             </div>
             <div className='column-2'>
-            <h1 className='title'>{producto.id}-{producto.title}</h1>
+            <h1 className='title'>{producto.id} - {producto.title}</h1>
             <p className='description'>{producto.description}</p>
             <p className='price'>$ {producto.price} ARS</p>
-            <div className='item-count-container'><ItemCount initial={0}/></div>
+            <div className='item-count-container'><ItemCount initial={0} stock={1000}/></div>
             </div>
             </div>
             </div>

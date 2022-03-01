@@ -20,7 +20,7 @@ function ItemDetailContainer () {
               async function fetchData() {
                 const todosLosProductos = await getItem();
                 console.log(todosLosProductos)
-                const [seleccion] = todosLosProductos.filter(itemSeleccionado => itemSeleccionado.id === id);
+                const [seleccion] = todosLosProductos.filter(itemSeleccionado => itemSeleccionado.id === 11);
                 console.log(id);
                 console.log(seleccion);
                 setProducto(seleccion);

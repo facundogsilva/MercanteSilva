@@ -12,7 +12,7 @@
 
 }
 
-button {
+.normal-button {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -20,4 +20,27 @@ button {
     margin-right: 5px;
 }
 
+.cart-button {
+    font-size: 16px;
+    align-content: center;
+    width: 100px;
+    font-family: 'Kanit', sans-serif;
+}
 
+.cart-button-2 {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Kanit', sans-serif;
+    font-size: auto;
+    width: 170px;
+    
+}
+
+.cart-button-3 {
+    font-size: 14px;
+    font-family: 'Kanit', sans-serif;
+    font-size: auto;
+    width: 150px;
+    margin-left: 10px;
+    
+}
