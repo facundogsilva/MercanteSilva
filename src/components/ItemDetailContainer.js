@@ -11,16 +11,17 @@ new Promise((resolve, reject) => {
 });
 
 function ItemDetailContainer () {
-    const [producto, setProducto] = useState();
+    const [producto, setProducto] = useState([]);
     const [loading, setLoading] = useState(true); 
-    const { id } = useParams();
+    const { id }  = useParams();
 
     useEffect(() => {
         try {
               async function fetchData() {
                 const todosLosProductos = await getItem();
                 console.log(todosLosProductos)
-                const seleccion = todosLosProductos.filter(itemSeleccionado => itemSeleccionado.id === id);
+                const [seleccion] = todosLosProductos.filter(itemSeleccionado => itemSeleccionado.id === id);
+                console.log(id);
                 console.log(seleccion);
                 setProducto(seleccion);
                 setLoading(false);
