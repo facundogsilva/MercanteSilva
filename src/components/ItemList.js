@@ -1,4 +1,4 @@
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
 import React from 'react'; 
 import Item from './Item';
 import './ItemListStyles.css';

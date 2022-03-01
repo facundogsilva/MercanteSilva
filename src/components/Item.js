@@ -4,7 +4,7 @@ import './ItemStyles.css';
 
 
 
-function Item ({id, title, price, pictureUrl}) {
+function Item ({ id, title, price, pictureUrl}) {
     return (
         <div className='item-card' key={id}>
             <Link to={'/productos/${id}'} key={id} className='link'>
@@ -18,6 +18,3 @@ function Item ({id, title, price, pictureUrl}) {
 }
 
 export default Item;
-
-// item to={`/productos/${item.id}`}
-// app path="/productos/:id"

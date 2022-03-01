@@ -14,12 +14,12 @@ function NavBar(){
             <nav>
                     <div className='navbar-button-container'>
                         <p className='navbar-logo'><Link to="/" className='link'>Mercante.</Link></p>
-                        <p className='navbar-button'>Inicio</p>
-                        <p className='navbar-button'>Productos<FontAwesomeIcon icon={faAngleDown} size='xs'/></p>
-                        <p className='navbar-button'>FAQ</p>
-                        <p className='navbar-button'>Contacto</p>
+                        <p className='navbar-button'><Link to="/" className='link'>Inicio</Link></p>
+                        <p className='navbar-button'><Link to="/" className='link'>Productos<FontAwesomeIcon icon={faAngleDown} size='xs'/></Link></p>
+                        <p className='navbar-button'><Link to="/" className='link'>FAQ</Link></p>
+                        <p className='navbar-button'><Link to="/" className='link'>Contacto</Link></p>
                         <div className='cartwidgetbutton'>
-                            <CartWidget/>
+                            <CartWidget to='/cart'/>
                         </div>
                     </div>
             </nav>
