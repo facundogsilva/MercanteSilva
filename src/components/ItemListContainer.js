@@ -21,7 +21,7 @@ import './ItemListContainerStyles.css';
                 let resultado = res.filter((elemento) => {
                     let mostrarProducto = '';
                     if (elemento.categoria === category) {
-                        mostrarProducto = elemento;
+                        mostrarProducto = resultado;
                     }
                     return mostrarProducto;
                 })
@@ -32,9 +32,7 @@ import './ItemListContainerStyles.css';
             })  
             .finally(() => {
                 setLoading(false);
-            });
-
-        
+            }); 
         } else  {
             promesa
             .then((res) => {
