@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'; 
 import ItemList from './ItemList'
+import { useParams } from 'react-router-dom';
 import productos from './productos'
 import './ItemListContainerStyles.css';
 
  const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { category }  = useParams();
 
      let promesa = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -13,7 +15,28 @@ import './ItemListContainerStyles.css';
         }, 5000)
     })
     useEffect(() => {
-        promesa
+        if (category) {
+            promesa
+            .then((res) => {
+                let resultado = res.filter((elemento) => {
+                    let mostrarProducto = '';
+                    if (elemento.categoria === category) {
+                        mostrarProducto = elemento;
+                    }
+                    return mostrarProducto;
+                })
+                setProducts(resultado);
+            })
+            .catch((error) => {
+                console.log(error);
+            })  
+            .finally(() => {
+                setLoading(false);
+            });
+
+        
+        } else  {
+            promesa
             .then((res) => {
                 setProducts(res);
             })
@@ -23,7 +46,9 @@ import './ItemListContainerStyles.css';
             .finally(() => {
                 setLoading(false);
             });
-    }, []);
+
+        }
+        }, []);
     
     return (
         <>

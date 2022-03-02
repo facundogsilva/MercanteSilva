@@ -23,7 +23,7 @@ function ItemDetailContainer () {
                 const seleccion = todosLosProductos.filter(itemSeleccionado => itemSeleccionado.id == id); 
                 console.log(id);
                 console.log(seleccion);
-                setProducto(seleccion);
+                setProducto(seleccion[0]);
                 setLoading(false);
               }
               fetchData(); 
@@ -31,6 +31,7 @@ function ItemDetailContainer () {
             console.log('error: ', error);
         }
       }, [id])
+
     
     return (
         <>
