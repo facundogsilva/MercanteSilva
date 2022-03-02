@@ -12,7 +12,7 @@ return (
             <h1 className='footer-text'><FontAwesomeIcon icon={faUser} size='xs'/> Instagram </h1>
             <h1 className='footer-text'><FontAwesomeIcon icon={faUser} size='xs'/> Facebook</h1>
         </div>
-        <div className='footer-column-2'><h1 className='footer-text'>Creado por Facundo Silva en React :)</h1></div>
+        <div className='footer-column-2'><h1 className='footer-text'>Creado por Facundo Silva en React, con el apoyo de CoderHouse :)</h1></div>
         <div className='footer-column-3'>
             <div className='footer-title'>Contacto</div>
             <h1 className='footer-text'><FontAwesomeIcon icon={faMapPin} size='xs'/> Carlos Calvo 632, San Telmo, CABA.</h1>

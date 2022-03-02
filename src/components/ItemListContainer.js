@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import productos from './productos'
 import './ItemListContainerStyles.css';
 
- const ItemListContainer = ({ greeting }) => {
+ const ItemListContainer =  ({ greeting }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const { category }  = useParams();
@@ -15,6 +15,7 @@ import './ItemListContainerStyles.css';
         }, 5000)
     })
     useEffect(() => {
+        try {
         if (category) {
             promesa
             .then((res) => {
@@ -35,6 +36,7 @@ import './ItemListContainerStyles.css';
             .finally(() => {
                 setLoading(false);
             }); 
+            
         } else  {
             promesa
             .then((res) => {
@@ -48,7 +50,10 @@ import './ItemListContainerStyles.css';
             });
 
         }
-        }, []);
+    } catch (error) {
+        console.log('error: ', error)
+    }
+        }, [category]);
     
     return (
         <>
