@@ -7,7 +7,7 @@ import './ItemStyles.css';
 function Item ({ id, title, price, pictureUrl}) {
     return (
         <div className='item-card' key={id}>
-            <Link to={'/productos/${id}'} key={id} className='link'>
+            <Link to={`/productos/${id}`} key={id} className='link'>
             <h1 className='item-id'>{id}</h1>
             <p className='item-title'>{id} - {title}</p>
             <p className='item-price'>$ {price} ARS</p>
