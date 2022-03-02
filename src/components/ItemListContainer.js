@@ -19,11 +19,13 @@ import './ItemListContainerStyles.css';
             promesa
             .then((res) => {
                 let resultado = res.filter((elemento) => {
-                    let mostrarProducto = '';
-                    if (elemento.categoria === category) {
-                        mostrarProducto = resultado;
+                    let mostrarProductos = '';
+                    console.log(category);
+                    if (elemento.category == category) {
+                        mostrarProductos = elemento;
+                        console.log(elemento)
                     }
-                    return mostrarProducto;
+                    return mostrarProductos;
                 })
                 setProducts(resultado);
             })
@@ -54,7 +56,7 @@ import './ItemListContainerStyles.css';
                 <h1 className='itemlistcontainer-text'>Cargando...</h1>
             ) : (
                 <>
-                    <h1 className='itemlistcontainer-text'>Hola, {greeting}</h1>
+                    <h1 className='itemlistcontainer-text'>{greeting}</h1>
                     <ItemList products={products} />
                 </>
             )}
