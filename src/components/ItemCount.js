@@ -1,39 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './ItemCountStyles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faCheck, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
-function ItemCount ({stock, initial, itemsAdded}) {
-    let [count, setCount] = useState(initial);
-    const [mostrar, setMostrar] = useState(true);
-
-    const addItem = () => {
-        if(count < stock){
-            setCount(count+1);
-        }
-        else{
-            alert("No queda suficiente stock :(")
-        }
-    };
-    const rmvItem = () => {
-        if(count > 0){
-            setCount(count-1);
-        }
-    };
-
-    const onAdd = () => {
-        if(count > 0) {
-        const itemsAdded = count;
-        setMostrar(false)
-        } 
-
-    }
+function ItemCount ({stock, initial, itemsAdded, addItem, rmvItem, onAdd, mostrar, count}) {
 
     return (
         <div className='card'>
                 
-                    { mostrar ?
+                    { {mostrar} ?
                     <>
                 <div><button onClick={addItem} className='normal-button'>+</button></div>
                 <div className='counter-numbers'>    {count}    </div>

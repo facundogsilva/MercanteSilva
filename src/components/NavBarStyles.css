@@ -78,8 +78,9 @@
     text-align: center;
     align-self: center;
     margin-top: 0px;
-    overflow: auto;
+    overflow: visible;
   }
+
   
   /* Links inside the dropdown */
   .dropdown-content a {

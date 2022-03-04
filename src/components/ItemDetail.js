@@ -1,8 +1,33 @@
-import React from 'react';
+import React, {useState}  from 'react';
 import './ItemDetailStyles.css';
 import ItemCount from './ItemCount';
 
-function ItemDetail ({ producto }) {
+function ItemDetail ({ producto, initial, stock }) {
+
+    let [count, setCount] = useState(initial);
+    const [mostrar, setMostrar] = useState(true);
+
+    const addItem = () => {
+        if(count < stock){
+            setCount(count+1);
+        }
+        else{
+            alert("No queda suficiente stock :(")
+        }
+    };
+    const rmvItem = () => {
+        if(count > 0){
+            setCount(count-1);
+        }
+    };
+
+    const onAdd = () => {
+        if(count > 0) {
+        const itemsAdded = count;
+        setMostrar(false)
+        } 
+    }
+
     return (
         <><div className='container'>
             <div className='item-detail-box'>
@@ -13,7 +38,8 @@ function ItemDetail ({ producto }) {
             <h1 className='title'>{producto.id} - {producto.title}</h1>
             <p className='description'>{producto.description}</p>
             <p className='price'>$ {producto.price} ARS</p>
-            <div className='item-count-container'><ItemCount initial={0} stock={1000}/></div>
+            <div className='item-count-container'>
+                <ItemCount mostrar={mostrar} addItem={addItem} rmvItem={rmvItem} onAdd={onAdd} count={count}/></div>
             </div>
             </div>
             </div>

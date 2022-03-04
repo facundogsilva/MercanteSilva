@@ -35,7 +35,7 @@ function ItemDetailContainer () {
     
     return (
         <>
-            {loading ? ( <h1 className='itemlistcontainer-text'>Cargando...</h1> ) : ( <ItemDetail producto={producto}/> )}
+            {loading ? ( <h1 className='itemlistcontainer-text'>Cargando...</h1> ) : ( <ItemDetail producto={producto} initial={0} stock={1000}/> )}
         </>
     )
 }
