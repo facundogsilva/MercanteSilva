@@ -5,12 +5,12 @@ import ItemListContainer from './components/ItemListContainer';
 import { BrowserRouter, Routes, Route,} from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Footer from './components/Footer'
-import { CartContext } from "//contexts/CartContext";
+import { CartContextProvider } from "./contexts/CartContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <CartContext.Provider>
+      <CartContextProvider>
           <NavBar />
               <Routes>
                 <Route path='/' element={<ItemListContainer greeting= 'Hola, bienvendos a Mercante!'/>}></Route>
@@ -19,7 +19,7 @@ function App() {
                 <Route path='/cart'></Route>
               </Routes>
           <Footer />
-    </CartContext.Provider>
+    </CartContextProvider>
    </BrowserRouter>
   );
 }

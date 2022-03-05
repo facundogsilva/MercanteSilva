@@ -14,7 +14,7 @@ const isInCart = (id) => cart.find(e => e.producto.id === id)
 const addedItem = (producto, cantidad) => {
     if (isInCart(producto.id)) {
 
-    const updateCant = [...cart]
+    const updateCant = [...cart];
 
         updateCant.map(e => {
             if (e.producto.id === producto.id){
@@ -22,6 +22,7 @@ const addedItem = (producto, cantidad) => {
             }
         });
         setCart(updateCant);
+        
     } else {
         setCart([...cart, {producto, cantidad}]);
 
@@ -30,7 +31,7 @@ const addedItem = (producto, cantidad) => {
 };
 
 const delItem = (id) => {
-    const cartFilter = cart.filter(e => producto.id !== id)
+    const cartFilter = cart.filter(e => e.producto.id !== id)
     setCart(cartFilter);
 };
 
