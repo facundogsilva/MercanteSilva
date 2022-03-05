@@ -1,11 +1,13 @@
 import React, {useState}  from 'react';
 import './ItemDetailStyles.css';
 import ItemCount from './ItemCount';
+import { useCartContext } from '../contexts/CartContext';
 
 function ItemDetail ({ producto, initial, stock }) {
 
     let [count, setCount] = useState(initial);
     const [mostrar, setMostrar] = useState(true);
+    const {addedItem} = useCartContext();
 
     const addItem = () => {
         if(count < stock){
@@ -23,7 +25,8 @@ function ItemDetail ({ producto, initial, stock }) {
 
     const onAdd = () => {
         if(count > 0) {
-        const itemsAdded = count;
+        addedItem (producto, count)
+        console.log(addedItem)
         setMostrar(false)
         } 
     }
