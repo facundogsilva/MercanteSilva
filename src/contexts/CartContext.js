@@ -22,6 +22,7 @@ const addedItem = (producto, cantidad) => {
             }
         });
         setCart(updateCant);
+        console.log(cart);
         
     } else {
         setCart([...cart, {producto, cantidad}]);

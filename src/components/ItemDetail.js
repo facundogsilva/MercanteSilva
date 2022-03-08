@@ -7,7 +7,7 @@ function ItemDetail ({ producto, initial, stock }) {
 
     let [count, setCount] = useState(initial);
     const [mostrar, setMostrar] = useState(true);
-    const {addedItem} = useCartContext();
+    const { addedItem } = useCartContext();
 
     const addItem = () => {
         if(count < stock){
@@ -23,10 +23,11 @@ function ItemDetail ({ producto, initial, stock }) {
         }
     };
 
-    const onAdd = () => {
+   function onAdd() {
         if(count > 0) {
-        addedItem (producto, count)
-        console.log(addedItem)
+        addedItem (producto, count);
+        console.log('producto: ', producto, 'count: ', count)
+        console.log(addedItem);
         setMostrar(false)
         } 
     }

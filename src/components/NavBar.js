@@ -3,7 +3,7 @@ import './NavBarStyles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import CartWidget from './CartWidget';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const element = <FontAwesomeIcon icon={faAngleDown} />
@@ -26,7 +26,9 @@ function NavBar(){
                         <p className='navbar-button'><Link to="/" className='link'>FAQ</Link></p>
                         <p className='navbar-button'><Link to="/" className='link'>Contacto</Link></p>
                         <div className='cartwidgetbutton'>
-                            <CartWidget to='/cart'/>
+                        <Link to='/cart'>
+                            <CartWidget />
+                         </Link>
                         </div>
                     </div>
             </nav>
