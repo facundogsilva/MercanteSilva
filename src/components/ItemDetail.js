@@ -27,6 +27,7 @@ function ItemDetail ({ producto, initial, stock }) {
         if(count > 0) {
         addedItem (producto, count);
         console.log('producto: ', producto, 'count: ', count)
+        console.log(addedItem)
         setMostrar(false)
         } 
     }

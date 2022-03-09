@@ -13,21 +13,21 @@ export const CartContextProvider = ({children}) => {
 
 const isInCart = (id) => cart.find(e => e.producto.id === id)
 
-const addedItem = (producto, cantidad) => {
+const addedItem = (producto, count) => {
     if (isInCart(producto.id)) {
 
     const updateCant = [...cart];
 
         updateCant.map(e => {
             if (e.producto.id === producto.id){
-                e.count += cantidad;
+                e.count += count;
             }
         });
         setCart(updateCant);
         console.log(cart);
         
     } else {
-        setCart([...cart, {producto, cantidad}]);
+        setCart([...cart, {producto, count}]);
 
     }
 
