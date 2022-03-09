@@ -45,6 +45,8 @@ const clrCart = () => {
 };
 
 
+
+
 return(
     <CartContext.Provider value={{cart, count, addedItem, delItem, clrCart}}>
         {children}

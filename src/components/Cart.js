@@ -14,9 +14,8 @@ const Cart = () => {
 const actualizarTotal = () => {
     let total = 0;
 
-        if (addedItem.length > 0) {
-                console.log(addedItem)
-                addedItem.map(e => {
+        if (cart.length > 0) {
+                cart.map(e => {
                     total += e.count;
                     setCantCart(total);
                     setDisplay(true);
@@ -30,14 +29,15 @@ useEffect(() => {
 
     actualizarTotal();
     
-}, [addedItem]);
+}, [cart]);
 
     return (
         <div className='cart-view-container'>
             <div className='cart-view'>
                 { display ?
                     <div className='display-true'>
-                        {cart}
+                        {cantCart}
+                        Total compra: $  ARS
                         <button onClick={delItem}>Eliminar item</button>
                         <button onClick={clrCart}>Limpiar carrito</button>
                     </div>
