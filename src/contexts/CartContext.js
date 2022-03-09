@@ -23,6 +23,7 @@ const addedItem = (producto, count) => {
                 e.count += count;
             }
         });
+        
         setCart(updateCant);
         console.log(cart);
         

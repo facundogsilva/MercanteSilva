@@ -25,11 +25,13 @@ function ItemDetail ({ producto, initial, stock }) {
 
    function onAdd() {
         if(count > 0) {
-        addedItem (producto, count);
+        addedItem(producto, count);
         console.log('producto: ', producto, 'count: ', count)
         console.log(addedItem)
         setMostrar(false)
-        } 
+        } else {
+            alert("Tenes que sumar al menos un item!")
+        }
     }
 
     return (

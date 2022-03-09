@@ -37,7 +37,7 @@ useEffect(() => {
             <div className='cart-view'>
                 { display ?
                     <div className='display-true'>
-                        {cantCart}
+                        {cart}
                         <button onClick={delItem}>Eliminar item</button>
                         <button onClick={clrCart}>Limpiar carrito</button>
                     </div>
