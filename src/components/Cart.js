@@ -8,15 +8,14 @@ import { CartContextUse } from '../contexts/CartContext';
 const Cart = () => {
     const [display, setDisplay] = useState(false);
     const [cantCart, setCantCart] = useState(0);
-    const {addedItem} = CartContextUse();
-    const { delItem } = CartContextUse();
-    const { clrCart } = CartContextUse();
+    const {addedItem, delItem, clrCart, cart, count} = CartContextUse();
 
     
 const actualizarTotal = () => {
     let total = 0;
 
         if (addedItem.length > 0) {
+                console.log(addedItem)
                 addedItem.map(e => {
                     total += e.count;
                     setCantCart(total);
