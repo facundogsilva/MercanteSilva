@@ -47,3 +47,100 @@
     color: inherit;
     text-decoration: inherit;
 }
+
+.cart-grid-container {
+    display: grid;
+    font-family: 'Kanit';
+    font-size: 20px;
+    grid-template-columns: 1fr 3fr 3fr 3fr 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 30px 30px 30px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.cart-button-2 {
+    font-size: 10px;
+    margin-bottom: 2px;
+    color: grey;
+}
+
+.grid-image {
+    grid-column: 1;
+    width: 50px;
+
+}
+
+.grid-image-props {
+    max-height: 50px;
+    border-radius: 5px;
+    margin-left: 40px;
+
+
+}
+
+.grid-product {
+    grid-column: 2;
+    font-weight: bold;
+    font-size: 1rem;
+    padding-top: 10px;
+    
+
+
+}
+
+.grid-units {
+    grid-column: 3;
+    color: white;
+    font-size: 17px;
+    padding-top: 10px;
+
+}
+.grid-price {
+    grid-column: 4;
+    padding-top: 10px;
+
+}
+
+.grid-delete-button {
+    grid-column: 5;
+    
+}
+
+.grid-delete-button button {
+    background-color: darkred;
+    width: 60px;
+}
+
+.cart-button-icon {
+    color: white;
+    font-size: 17px;
+}
+
+.total-price {
+    grid-column: 6;
+    grid-row: 2;
+    font-weight: bold;
+    
+}
+
+
+.cart-button-clear {
+    font-family: 'Kanit';
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    grid-column: 6;
+    grid-row: 3;
+
+    
+}
+
+.cart-button-clear button {
+    padding-left: -50px;
+    max-height: 40px;
+    width: 160px;
+}

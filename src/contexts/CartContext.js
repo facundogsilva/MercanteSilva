@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react';
+import Cart from '../components/Cart';
 
 const CartContext = createContext();
 
@@ -10,6 +11,7 @@ export const CartContextUse = () => {
 export const CartContextProvider = ({children}) => {
     const [cart, setCart ] = useState([]);
     const [count, setCount] = useState(0);
+    const [totalcount, setTotalCount] = useState(0);
 
 const isInCart = (id) => cart.find(e => e.producto.id === id)
 
@@ -44,11 +46,11 @@ const clrCart = () => {
     setCount(0);
 };
 
-
-
+const cartTotalCount = () => {
+}
 
 return(
-    <CartContext.Provider value={{cart, count, addedItem, delItem, clrCart}}>
+    <CartContext.Provider value={{cart, count, addedItem, delItem, clrCart, cartTotalCount, totalcount}}>
         {children}
     </CartContext.Provider >
 )
