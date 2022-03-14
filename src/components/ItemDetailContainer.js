@@ -1,33 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
-import productos from './productos';
-
-const getItem = () => 
-new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(productos);
-    }, 2000);
-});
+import { db } from '../utils/firebase';
+import { collection, getDocs, doc, getDoc, query, where } from 'firebase/firestore';
 
 function ItemDetailContainer () {
     const [producto, setProducto] = useState([]);
     const [loading, setLoading] = useState(true); 
     const { id }  = useParams();
 
-    useEffect(() => {
+    const getSelected = async () => {
         try {
-              async function fetchData() {
-                const todosLosProductos = await getItem();
-                const seleccion = todosLosProductos.filter(itemSeleccionado => itemSeleccionado.id == id); 
-                setProducto(seleccion[0]);
-                setLoading(false);
-              }
-              fetchData(); 
+          const document = doc(db, "items", id);
+          const response = await getDoc(document);
+          setProducto({ id: response.id, ...response.data() });
+          console.log(producto.id);
         } catch (error) {
-            console.log('error: ', error);
+          console.log("error", error);
+        } finally {
+            setLoading(false);
         }
-      }, [id])
+      };
+    
+      useEffect(() => {
+        getSelected();
+      }, [id]);
 
     
     return (

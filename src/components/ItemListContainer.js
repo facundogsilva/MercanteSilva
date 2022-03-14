@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'; 
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom';
-import productos from './productos'
+import { db } from '../utils/firebase';
+import { collection, getDocs, doc, getDoc, query, where } from 'firebase/firestore';
 import './ItemListContainerStyles.css';
 
  const ItemListContainer =  ({ greeting }) => {
@@ -9,52 +10,35 @@ import './ItemListContainerStyles.css';
     const [loading, setLoading] = useState(true);
     const { category }  = useParams();
 
-     let promesa = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(productos)
-        }, 5000)
-    })
-    useEffect(() => {
+    const getData = async () => {
         try {
-        if (category) {
-            promesa
-            .then((res) => {
-                let resultado = res.filter((elemento) => {
-                    let mostrarProductos = '';
-                    console.log(category);
-                    if (elemento.category == category) {
-                        mostrarProductos = elemento;
-                        console.log(elemento)
-                    }
-                    return mostrarProductos;
-                })
-                setProducts(resultado);
-            })
-            .catch((error) => {
-                console.log(error);
-            })  
-            .finally(() => {
-                setLoading(false);
-            }); 
-            
-        } else  {
-            promesa
-            .then((res) => {
-                setProducts(res);
-            })
-            .catch((error) => {
-                console.log(error);
-            })  
-            .finally(() => {
-                setLoading(false);
-            });
-
+          const itemCollection = collection(db, "items");
+          const col = await getDocs(itemCollection);
+          const dataItems = col.docs.map((doc) => (doc = { id: doc.id, ...doc.data() }));
+          console.log(dataItems)
+          setProducts(dataItems);
+          setLoading(false);
+        } catch (error) {
+          console.log("error", error);
         }
-    } catch (error) {
-        console.log('error: ', error)
-    }
-        }, [category]);
+      };
     
+      const getQuery = async () => {
+        try {
+          const consulta = query(collection(db, "productos"), where("categoryId", "==", category));
+          const QuerySnapshot = await getDocs(consulta);
+          setProducts(QuerySnapshot.docs.map((doc) => (doc = { id: doc.id, ...doc.data() })));
+          setLoading(false);
+        } catch (error) {
+          console.log("error", error);
+        }
+      };
+    
+      useEffect(() => {
+        category ? getQuery() : getData();
+      }, [category]);
+
+
     return (
         <>
             {loading ? (

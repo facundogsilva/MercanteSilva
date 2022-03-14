@@ -2,6 +2,7 @@ import React, {useState}  from 'react';
 import './ItemDetailStyles.css';
 import ItemCount from './ItemCount';
 import { CartContextUse } from '../contexts/CartContext';
+import { useParams } from 'react-router-dom';
 
 function ItemDetail ({ producto, initial, stock }) {
 
@@ -41,7 +42,7 @@ function ItemDetail ({ producto, initial, stock }) {
             <img src={producto.pictureUrl} alt="foto del producto" className='detail-img'></img>
             </div>
             <div className='column-2'>
-            <h1 className='title'>{producto.id} - {producto.title}</h1>
+            <h1 className='title'>{producto.title}</h1>
             <p className='description'>{producto.description}</p>
             <p className='price'>$ {producto.price} ARS</p>
             <div className='item-count-container'>
