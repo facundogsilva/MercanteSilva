@@ -24,14 +24,16 @@ const actualizarTotal = () => {
                 });
         } else {
             setDisplay(false)
-        }
+        } 
 }
 
 useEffect(() => {
-    console.log(cart[0].producto)
+
     actualizarTotal();
     
 }, [cart]);
+
+
 
     return (
         <div className='cart-view-container'>
@@ -51,7 +53,7 @@ useEffect(() => {
                     </div>
                     :
                     <div className='display-false'>
-                        <h1>Aún no hay items en el carrito! </h1> 
+                        <h1>¡Aún no hay items en el carrito! </h1> 
                         <div className='button-container'>
                         <button className='display-false-button'><Link to='/' className='link'>Agregar  <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon></Link></button> 
                         </div>
