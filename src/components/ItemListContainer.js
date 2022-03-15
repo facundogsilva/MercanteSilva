@@ -25,7 +25,7 @@ import './ItemListContainerStyles.css';
     
       const getQuery = async () => {
         try {
-          const consulta = query(collection(db, "productos"), where("categoryId", "==", category));
+          const consulta = query(collection(db, "items"), where("categoryId", "==", category));
           const QuerySnapshot = await getDocs(consulta);
           setProducts(QuerySnapshot.docs.map((doc) => (doc = { id: doc.id, ...doc.data() })));
           setLoading(false);
