@@ -37,7 +37,8 @@ const addedItem = (producto, count) => {
 };
 
 const delItem = (id) => {
-    const cartFilter = cart.filter(e => e.producto.id !== id)
+    const cartFilter = cart.filter(e => e.id !== id)
+    console.log(cartFilter)
     setCart(cartFilter);
 };
 
@@ -47,6 +48,7 @@ const clrCart = () => {
 };
 
 const cartTotalCount = () => {
+    setTotalCount(cart.reduce((acum, item) => acum + item.price * item.count));
 }
 
 return(

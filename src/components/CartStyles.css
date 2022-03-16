@@ -7,6 +7,7 @@
     min-height: 200px;
     width: 1400px;
     margin: 0 auto;
+    padding-bottom: 30px;
     border-radius: 30px;
     background-color: #778899;
 }
@@ -53,17 +54,19 @@
     font-family: 'Kanit';
     font-size: 20px;
     grid-template-columns: 1fr 3fr 3fr 3fr 1fr 3fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    margin: 30px 30px 30px;
-    padding-bottom: 30px;
-    padding-top: 50px;
+    grid-template-rows: 1fr;
+    margin-left: 30px;
+    margin-top: 15px;
+    margin-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
 }
 
 .cart-button-2 {
     font-size: 10px;
     margin-bottom: 2px;
-    color: grey;
+    color: black;
 }
 
 .grid-image {
@@ -119,9 +122,11 @@
 }
 
 .total-price {
-    grid-column: 6;
-    grid-row: 2;
     font-weight: bold;
+    font-family: 'Kanit';
+    margin-left: 1200px;
+
+
     
 }
 
@@ -131,6 +136,8 @@
     height: auto;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-bottom: 30px;
+    margin-right: 10px;
     font-size: 17px;
     font-weight: bold;
     grid-column: 6;

@@ -9,13 +9,15 @@ import { faTrashAlt, faDotCircle } from '@fortawesome/free-solid-svg-icons'
 const Cart = () => {
     const [display, setDisplay] = useState(false);
     const [cantCart, setCantCart] = useState(0);
-    const {addedItem, delItem, clrCart, cart, count} = CartContextUse();
+    const {addedItem, delItem, clrCart, cart, count, totalcount} = CartContextUse();
 
     
 const actualizarTotal = () => {
     let total = 0;
     
         if (cart.length > 0) {
+            console.log(cart)
+            console.log(cart[0].producto.title)
                 cart.map(e => {
                     total += e.count;
                     setCantCart(total);
@@ -39,18 +41,23 @@ useEffect(() => {
         <div className='cart-view-container'>
             <div className='cart-view'>
                 { display ?
+                cart.map((e) => {
+                    return (
+                    <>
                     <div className='display-true'>
                         <div className='cart-grid-container'>
-                        <div className='grid-image'><img className='grid-image-props' src={cart[0].producto.pictureUrl}></img></div>
-                         <div className='grid-product'><FontAwesomeIcon className='cart-button-2' icon={faDotCircle} size='xs'/>  {cart[0].producto.title} </div>
-                         <div className='grid-units'>{cart[0].count} unidades </div>
-                         <div className='grid-price'>  $ {cart[0].producto.price * cart[0].count} ARS</div>
-                        <div className='grid-delete-button'><button conClick={delItem} className='cart-buttons'><FontAwesomeIcon className='cart-button-icon' icon={faTrashAlt} size='xs'/></button></div>
-                        <div className='total-price'>Total compra: $  ARS </div>
-                        <div className='cart-button-clear'><button onClick={clrCart} className='cart-button-clear'>Limpiar carrito</button></div>
-                        </div>
-                        
+                        <div className='grid-image'><img className='grid-image-props' src={e.producto.pictureUrl}></img></div>
+                         <div className='grid-product'><FontAwesomeIcon className='cart-button-2' icon={faDotCircle} size='xs'/>  {e.producto.title} </div>
+                         <div className='grid-units'>{e.count} unidades </div>
+                         <div className='grid-price'>  $ {e.producto.price * e.count} ARS</div>
+                        <div className='grid-delete-button'><button  onClick={() => delItem(e.id, e.count)} className='cart-buttons'><FontAwesomeIcon className='cart-button-icon' icon={faTrashAlt} size='xs'/></button></div>
+                        </div>  
                     </div>
+                    
+                    </>
+                    )
+                    }
+                    )
                     :
                     <div className='display-false'>
                         <h1>¡Aún no hay items en el carrito! </h1> 
@@ -59,6 +66,15 @@ useEffect(() => {
                         </div>
                     </div>
                 }
+                {display ? 
+                <>
+                <div className='total-price'>Total compra: $ {totalcount} ARS </div>
+                <div className='cart-button-clear'><button onClick={clrCart} className='cart-button-clear'>Vaciar carrito</button></div>
+                </> 
+                :
+                ''
+                }
+                
             </div>
         </div>
     )
