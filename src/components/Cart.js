@@ -36,21 +36,16 @@ const sendOrder = async(e) => {
     e.preventDefault();
     let order = {
         buyer: {
-            name: e.target[0].value,
-            phone: e.target[1].value,
-            email: e.target[2].value,
+            name: e.target[1].value,
+            phone: e.target[2].value,
+            email: e.target[0].value,
         },
         items: cart,
-        date: order.date,
         total: cart.reduce((acc, i)=>(acc + i (i.item.price * i.count)),0)
     }
-    console.log(e.target[0].value)
-    console.log(e.target[1].value)
-    console.log(e.target[2].value)
     order.date = Timestamp.fromDate(new Date());
     const queryCollection = collection(db, 'orders');
     const docRef = await addDoc(queryCollection, order)
-    console.log('docref', docRef.id)
 
 
 }
