@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import './CartStyles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import { CartContextUse } from '../contexts/CartContext';
 import { faTrashAlt, faDotCircle } from '@fortawesome/free-solid-svg-icons'
+import {collection, timeStamp, getDocs, doc, getDoc, Timestamp, addDoc } from 'firebase/firestore'
+import {db} from '../utils/firebase'
+import { async } from '@firebase/util';
 
 const Cart = () => {
     const [display, setDisplay] = useState(false);
@@ -29,12 +32,35 @@ const actualizarTotal = () => {
         } 
 }
 
+const sendOrder = async(e) => {
+    e.preventDefault();
+    let order = {
+        buyer: {
+            name: e.target[0].value,
+            phone: e.target[1].value,
+            email: e.target[2].value,
+        },
+        items: cart,
+        date: order.date,
+        total: cart.reduce((acc, i)=>(acc + i (i.item.price * i.count)),0)
+    }
+    console.log(e.target[0].value)
+    console.log(e.target[1].value)
+    console.log(e.target[2].value)
+    order.date = Timestamp.fromDate(new Date());
+    const queryCollection = collection(db, 'orders');
+    const docRef = await addDoc(queryCollection, order)
+    console.log('docref', docRef.id)
+
+
+}
+
 useEffect(() => {
 
     actualizarTotal();
+    sendOrder();
     
 }, [cart]);
-
 
 
     return (
@@ -70,6 +96,17 @@ useEffect(() => {
                 <>
                 <div className='total-price'>Total compra: $ {totalcount} ARS </div>
                 <div className='cart-button-clear'><button onClick={clrCart} className='cart-button-clear'>Vaciar carrito</button></div>
+
+                <form  className='input-holder' onSubmit={sendOrder}>
+                    <label for="email">Email</label>
+                    <input type="text" id="fname" name="fname" ></input>
+                    <label for="name">Nombre</label>
+                    <input type="text" id="lname" name="lname"></input>
+                    <label for="pnumber">Número de teléfono</label>
+                    <input type="text" id="lname" name="lname"></input><br></br>
+                    <button className='buy-button' type='submit'>Comprar</button>
+                </form>
+                    
                 </> 
                 :
                 ''

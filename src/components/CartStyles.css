@@ -151,3 +151,39 @@
     max-height: 40px;
     width: 160px;
 }
+
+.input-holder {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    font-family: 'Kanit';
+    background-color: darkgrey;
+    height: 10rem;
+    border-radius: 35px;
+    width: 80rem;
+    padding-top: 30px;
+    margin: auto;
+    margin-top: 100px;
+
+
+}
+
+label {
+    margin: 10px;
+    font-size: 17px;
+    font-family: 'Kanit';
+    font-weight: bold;
+}
+
+input {
+    font-family: 'Kanit';
+    border-radius: 100px;
+    margin-left: 5px;
+}
+
+
+.buy-button {
+    font-weight: bold;
+    font-family: 'Kanit';
+    margin-right: 600px;
+    margin-top: 50px;
+}
