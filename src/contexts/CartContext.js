@@ -37,9 +37,10 @@ const addedItem = (producto, count) => {
 };
 
 const delItem = (id) => {
-    const cartFilter = cart.filter(e => e.id !== id)
-    console.log(cartFilter)
-    setCart(cartFilter);
+    const newCart = [...cart].filter (p => {
+        return p.producto.id != id
+    })  
+    setCart(newCart)
 };
 
 const clrCart = () => {

@@ -50,7 +50,7 @@ useEffect(() => {
                          <div className='grid-product'><FontAwesomeIcon className='cart-button-2' icon={faDotCircle} size='xs'/>  {e.producto.title} </div>
                          <div className='grid-units'>{e.count} unidades </div>
                          <div className='grid-price'>  $ {e.producto.price * e.count} ARS</div>
-                        <div className='grid-delete-button'><button  onClick={() => delItem(e.id, e.count)} className='cart-buttons'><FontAwesomeIcon className='cart-button-icon' icon={faTrashAlt} size='xs'/></button></div>
+                        <div className='grid-delete-button'><button  onClick={() => delItem(e.producto.id, e.count)} className='cart-buttons'><FontAwesomeIcon className='cart-button-icon' icon={faTrashAlt} size='xs'/></button></div>
                         </div>  
                     </div>
                     
