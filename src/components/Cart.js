@@ -32,20 +32,29 @@ const actualizarTotal = () => {
         } 
 }
 
-const sendOrder = async(e) => {
-    e.preventDefault();
+const sendOrder = async(evt) => {
+    evt.preventDefault();
+    console.log(cart)
     let order = {
         buyer: {
-            name: e.target[1].value,
-            phone: e.target[2].value,
-            email: e.target[0].value,
+            name: evt.target[1].value,
+            phone: evt.target[2].value,
+            email: evt.target[0].value,
         },
-        items: cart,
-        total: cart.reduce((acc, i)=>(acc + i (i.item.price * i.count)),0)
+        items: {
+            cart
+        },
+        total: cart.reduce((acc, i)=>(acc + (i.producto.price * i.count)),0)
     }
     order.date = Timestamp.fromDate(new Date());
     const queryCollection = collection(db, 'orders');
-    const docRef = await addDoc(queryCollection, order)
+    console.log(order)
+    try {
+        const docRef = await addDoc(queryCollection, order)
+        console.log('docRef:', docRef)
+    } catch (error) {
+        console.log('error: ', error)
+    }
 
 
 }
