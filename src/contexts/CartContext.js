@@ -49,15 +49,13 @@ const clrCart = () => {
     setCount(0);
 };
 
-const cartTotalCount = () => {
-    setTotalCount(cart.reduce((acum, item) => acum + item.price * item.count));
-}
+const cartTotalCount = cart.reduce((acc, i)=>(acc + (i.producto.price * i.count)),0);
 
-
+const cartWidgetCount = cart.reduce((acc, i)=>(acc + (i.producto.id = 1)),0);
 
 
 return(
-    <CartContext.Provider value={{cart, count, addedItem, delItem, clrCart, cartTotalCount, totalcount}}>
+    <CartContext.Provider value={{cart, count, addedItem, delItem, clrCart, cartTotalCount, totalcount, cartWidgetCount}}>
         {children}
     </CartContext.Provider >
 )

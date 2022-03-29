@@ -7,11 +7,11 @@ import { CartContextUse } from '../contexts/CartContext';
 const element = <FontAwesomeIcon icon={faShoppingCart} />
 
 function CartWidget(){
-    const {totalcount} = CartContextUse();
+    const {cartWidgetCount} = CartContextUse();
     return(
         <>
         <button>
-            <FontAwesomeIcon className='cart-button' icon={faShoppingCart} size='xs'/><div className='totalcount'>{totalcount}</div>
+            <FontAwesomeIcon className='cart-button' icon={faShoppingCart} size='xs'/><div className='totalcount'>{cartWidgetCount}</div>
         </button>
         
         </>

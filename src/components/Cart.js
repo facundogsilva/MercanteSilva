@@ -12,7 +12,7 @@ import { async } from '@firebase/util';
 const Cart = () => {
     const [display, setDisplay] = useState(false);
     const [cantCart, setCantCart] = useState(0);
-    const {addedItem, delItem, clrCart, cart, count, totalcount} = CartContextUse();
+    const {addedItem, delItem, clrCart, cart, count, totalcount, cartTotalCount} = CartContextUse();
 
     
 const actualizarTotal = () => {
@@ -20,6 +20,7 @@ const actualizarTotal = () => {
     
         if (cart.length > 0) {
             console.log(cart)
+            console.log(cartTotalCount)
             console.log(cart[0].producto.title)
                 cart.map(e => {
                     total += e.count;
@@ -55,7 +56,6 @@ const sendOrder = async(evt) => {
     } catch (error) {
         console.log('error: ', error)
     }
-
 
 }
 
@@ -98,7 +98,7 @@ useEffect(() => {
                 }
                 {display ? 
                 <>
-                <div className='total-price'>Total compra: $ {totalcount} ARS </div>
+                <div className='total-price'>Total compra: $ {cartTotalCount} ARS </div>
                 <div className='cart-button-clear'><button onClick={clrCart} className='cart-button-clear'>Vaciar carrito</button></div>
 
                 <form  className='input-holder' onSubmit={sendOrder}>
