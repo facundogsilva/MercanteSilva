@@ -8,6 +8,8 @@ import { faTrashAlt, faDotCircle } from '@fortawesome/free-solid-svg-icons'
 import {collection, timeStamp, getDocs, doc, getDoc, Timestamp, addDoc } from 'firebase/firestore'
 import {db} from '../utils/firebase'
 import { async } from '@firebase/util';
+import swal from 'sweetalert';
+
 
 const Cart = () => {
     const [display, setDisplay] = useState(false);
@@ -19,9 +21,6 @@ const actualizarTotal = () => {
     let total = 0;
     
         if (cart.length > 0) {
-            console.log(cart)
-            console.log(cartTotalCount)
-            console.log(cart[0].producto.title)
                 cart.map(e => {
                     total += e.count;
                     setCantCart(total);
@@ -35,7 +34,6 @@ const actualizarTotal = () => {
 
 const sendOrder = async(evt) => {
     evt.preventDefault();
-    console.log(cart)
     let order = {
         buyer: {
             name: evt.target[1].value,
@@ -49,10 +47,16 @@ const sendOrder = async(evt) => {
     }
     order.date = Timestamp.fromDate(new Date());
     const queryCollection = collection(db, 'orders');
-    console.log(order)
+    console.log()
+    
     try {
         const docRef = await addDoc(queryCollection, order)
         console.log('docRef:', docRef)
+        console.log(docRef.id)
+        console.log('Gracias por tu compra! Tu id de compra es', docRef.id )
+        alert( `Gracias por tu compra! Tu id de compra es: ${docRef.id}` )
+        clrCart();
+
     } catch (error) {
         console.log('error: ', error)
     }

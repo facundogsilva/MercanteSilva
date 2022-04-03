@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import Cart from '../components/Cart';
+
 
 
 const CartContext = createContext();
@@ -25,6 +25,7 @@ const addedItem = (producto, count) => {
             if (e.producto.id === producto.id){
                 e.count += count;
             }
+
         });
         
         setCart(updateCant);
@@ -38,9 +39,7 @@ const addedItem = (producto, count) => {
 };
 
 const delItem = (id) => {
-    const newCart = [...cart].filter (p => {
-        return p.producto.id != id
-    })  
+    const newCart = cart.filter((e) => e.producto.id !== id)  
     setCart(newCart)
 };
 
